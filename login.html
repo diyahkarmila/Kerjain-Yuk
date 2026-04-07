@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - To Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container-auth">
+    <div class="auth-box">
+      <div class="auth-left">
+        <span class="badge">To Do List App</span>
+        <h1>Atur Tugasmu Lebih Mudah</h1>
+        <p>Kelola tugas harian, deadline, dan progres pekerjaan secara online menggunakan Firebase.</p>
+      </div>
+      <div class="auth-right">
+        <form class="auth-form" id="loginForm">
+          <h2>Login</h2>
+          <p class="subtext">Masuk ke dashboard tugas kamu</p>
+          <input type="email" id="email" class="form-control" placeholder="Masukkan email" autocomplete="email">
+          <input type="password" id="password" class="form-control" placeholder="Masukkan password" autocomplete="current-password">
+          <button id="loginBtn" class="btn btn-primary full" type="submit">Login</button>
+          <p class="helper-text">Belum verifikasi email? Coba login sekali, sistem akan kirim ulang link verifikasi otomatis.</p>
+          <p class="auth-link">Belum punya akun? <a href="register.html">Register sekarang</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="auth.js"></script>
+</body>
+</html>

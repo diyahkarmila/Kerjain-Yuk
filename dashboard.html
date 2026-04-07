@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Kerjain-Yuk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div>
+      <h2>Kerjain-Yuk Dashboard</h2>
+      <div class="user-email" id="userEmail">Memuat akun...</div>
+    </div>
+    <button id="logoutBtn" class="btn btn-danger" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="container">
+    <div id="pageMessage" class="page-message"></div>
+
+    <div class="grid-stats">
+      <div class="card">
+        <h4>Total Tugas</h4>
+        <div class="stats-number" id="totalTugas">0</div>
+      </div>
+      <div class="card">
+        <h4>Tugas Selesai</h4>
+        <div class="stats-number" id="totalSelesai">0</div>
+      </div>
+      <div class="card">
+        <h4>Tugas Belum</h4>
+        <div class="stats-number" id="totalBelum">0</div>
+      </div>
+    </div>
+
+    <div class="grid-main">
+      <div class="card">
+        <h3>Form Tambah / Update Tugas</h3>
+        <form id="taskForm">
+          <input type="hidden" id="taskId">
+
+          <input type="text" id="judulTugas" class="form-control" placeholder="Judul tugas" required>
+
+          <select id="kategori" class="form-select" required>
+            <option value="">Pilih kategori</option>
+            <option value="Kuliah">Kuliah</option>
+            <option value="Kerja">Kerja</option>
+            <option value="Pribadi">Pribadi</option>
+          </select>
+
+          <input type="date" id="deadline" class="form-control" required>
+
+          <select id="status" class="form-select" required>
+            <option value="">Pilih status</option>
+            <option value="Belum">Belum</option>
+            <option value="Proses">Proses</option>
+            <option value="Selesai">Selesai</option>
+          </select>
+
+          <textarea id="deskripsi" class="form-control" rows="4" placeholder="Deskripsi tugas" required></textarea>
+
+          <div class="actions">
+            <button id="saveBtn" class="btn btn-primary" type="submit">Simpan</button>
+            <button class="btn btn-secondary" type="reset">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Daftar Tugas</h3>
+
+        <input type="text" id="searchInput" class="form-control search-box" placeholder="Cari judul / kategori / status...">
+
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Judul</th>
+                <th>Kategori</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th>Deskripsi</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="taskList">
+              <tr>
+                <td colspan="7" style="text-align:center;">Belum ada data tugas</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="crud.js"></script>
+</body>
+</html>
